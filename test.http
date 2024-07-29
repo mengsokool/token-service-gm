@@ -1,0 +1,13 @@
+GET http://localhost:6000/check/token
+
+##########
+
+POST http://localhost:6000/tokens
+
+{
+    "token": 5555
+}
+
+########
+
+DELETE 
