@@ -9,12 +9,12 @@ app.use(express.json());
 const sequelize = new Sequelize("mydatabase", "myuser", "mypassword", {
   host: "localhost",
   dialect: "postgres",
-  port: 5432,
+  port: 5455,
 });
 
 const redis = new Redis({
   host: "localhost",
-  port: 6379,
+  port: 6355,
 });
 
 interface TokenAttributes {
@@ -101,7 +101,7 @@ app.get("/check/:token", async (req, res) => {
   }
 });
 
-app.delete("/check/:token", async (req, res) => {
+app.delete("/delete/:token", async (req, res) => {
   const token = req.params.token; // รับค่า Token จาก URL
 
   if (!token) {
