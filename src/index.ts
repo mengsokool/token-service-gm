@@ -47,7 +47,7 @@ Token.init(
 // สร้างตารางในฐานข้อมูล (หากยังไม่มีอยู่)
 sequelize.sync();
 
-app.post('/tokens', async (req, res) => {
+app.post('/register', async (req, res) => {
   try {
     const token = req.body.token; // รับค่า Token จาก body ของ request
 
