@@ -75,7 +75,7 @@ app.post('/register', async (req, res) => {
   }
 }) 
 
-app.get("/check/:token", async (req, res) => {
+app.get("/verify/:token", async (req, res) => {
   const token = req.params.token; // รับค่า Token จาก URL
 
   if (!token) {
