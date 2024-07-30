@@ -50,6 +50,7 @@ sequelize.sync();
 app.post('/register', async (req, res) => {
   try {
     const token = req.body.token; // รับค่า Token จาก body ของ request
+    console.log(token);
 
     if (!token) {
       return res.status(400).json({ error: 'Token is required' }); // ส่งคืนข้อความแจ้งผลการสร้าง Token ไม่สำเร็จ
@@ -101,7 +102,7 @@ app.get("/verify/:token", async (req, res) => {
   }
 });
 
-app.delete("/delete/:token", async (req, res) => {
+app.delete("/invoke/:token", async (req, res) => {
   const token = req.params.token; // รับค่า Token จาก URL
 
   if (!token) {
